@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('abp.menu')
 
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>CRUD EXA </h2>
+                <h2>Empleados</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{url('exas/create')}}" title="Create a empleado"> <i class="fas fa-plus-circle"></i>
@@ -24,13 +24,13 @@
             <th>No</th>
             <th>codigo</th>
             <th>nombre</th>
-            <th>ap_p</th>
-            <th>ap_m</th>
-            <th>area</th>
-            <th>sueldo</th>
-            <th>dias</th>
-            <th>total_n</th>
-            <th>total_b</th>
+            <th>Apellido paterno</th>
+            <th>Apellido materno</th>
+            <th>Area</th>
+            <th>Sueldo</th>
+            <th>Dias laborados</th>
+            <th>Pago total</th>
+            <th>Pago menos seguros</th>
             <th>Acciones</th>
         </tr>
         @foreach ($exas as $exa)
@@ -46,7 +46,7 @@
                 <td>{{$exa->total_n}}</td>
                 <td>{{$exa->total_b}}</td>
                 <td>
-                    <form action="{{url('exas', $exa->id)}}" method="POST">   
+                    <form action="{{url('exas', $exa->id)}}" method="POST">
                         @csrf
                         @method("DELETE")
                         <button class="btn btn-danger"><i class="fas fa-trash fa-lg"></i></button>

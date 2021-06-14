@@ -101,7 +101,7 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
         $tag->delete();
-        return redirect()->route("comments.index")->with("success","Post eliminado corectamente");
+        return redirect()->route("tags.index")->with("success","Empresa eliminado corectamente");
         //
     }
 }

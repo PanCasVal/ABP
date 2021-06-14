@@ -45,7 +45,7 @@ class CommentController extends Controller
             'state' => 'required',
             'author' => 'required',
             'email' => 'required',
-            //'url' => 'required',
+            //'url' => 'required',dd
             'id_post' => 'required',
         ]);
         Comment::create($request->all());

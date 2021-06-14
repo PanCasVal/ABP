@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('abp.menu')
 
 @section('content')
 
@@ -54,7 +54,7 @@
                     <input type="text" name="ap_m" class="form-control" placeholder="Apellido Materno" value="{{$exa->ap_m}}">
                 </div>
             </div>
-            
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Area:</strong>:</strong>

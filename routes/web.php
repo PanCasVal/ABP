@@ -6,6 +6,8 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\LookupController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ExaController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\CompradorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,8 +40,14 @@ Route:: get("abp", function (){
 Route:: get("Ingresa", function (){
     return view("Ingresa.index");
 });
+Route:: get("Valida", function (){
+    return view("inicio.valida");
+});
 Route:: get("Informacion", function (){
     return view("Informacion.index");
+});
+Route::get("Zonas",function (){
+    return view("zonas.index");
 });
 
 Auth::routes();
@@ -63,3 +71,7 @@ Route::resource('lookups', LookupController::class);
 Route::resource('comments', CommentController::class);
 
 Route::resource('exas',ExaController::class);
+
+Route::resource('productos',ProductoController::class);
+
+Route::resource('compradores',CompradorController::class);

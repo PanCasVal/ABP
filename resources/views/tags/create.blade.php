@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('abp.menu')
 
 @section('content')
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Crear Nuevo TAG </h2>
+                <h2>Agregar empresa </h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{url('tags')}}" title="Regresar"> <i class="fas fa-backward "></i> </a>

@@ -22,3 +22,4 @@ class Exa extends Model
         'total_b',
     ];
 }
+

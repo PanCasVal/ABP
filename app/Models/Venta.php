@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Venta extends Model
 {
     use HasFactory;
     protected $fillable = 
     [
-        'content',
-        'state',
-        'author',
-        'email',
-        'id_post ',
+        'nombre',
+        'ap_p',
+        'ap_m',
+        'n_p',
+        'zona',
+        'precio',
     ];
 }
