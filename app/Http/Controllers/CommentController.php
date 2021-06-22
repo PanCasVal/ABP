@@ -108,7 +108,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy($comment)
     {
         $comment->delete();
         return redirect()->route("comments.index")->with("success","Post eliminado corectamente");

@@ -67,9 +67,9 @@ class CompradorController extends Controller
      * @param  \App\Models\Comprador  $comprador
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comprador $comprador)
+    public function edit(Comprador $compradore)
     {
-        return view('compradores.edit',compact('comprador'));
+        return view('compradores.edit',compact('compradore'));
         //
     }
 
@@ -80,7 +80,7 @@ class CompradorController extends Controller
      * @param  \App\Models\Comprador  $comprador
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comprador $comprador)
+    public function update(Request $request, Comprador $compradore)
     {
         $request->validate([
             'nombre' => 'required',
@@ -88,7 +88,7 @@ class CompradorController extends Controller
             'ap_m' => 'required',
             'correo' => 'required',
         ]);
-        $comprador->update($request->all());
+        $compradore->update($request->all());
 
         return redirect()->route('compradores.index')
             ->with('success', 'Resgistro exitoso!!.');
@@ -101,10 +101,10 @@ class CompradorController extends Controller
      * @param  \App\Models\Comprador  $comprador
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comprador $comprador)
+    public function destroy(Comprador $compradore)
     {
         //return 'hola';
-        $comprador->delete();
+        $compradore->delete();
         return redirect()->route("compradores.index")->with("success","Empleado eliminado corectamente");
     }
 }

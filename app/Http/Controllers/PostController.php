@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,7 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts=Post::all();
+
+        $posts=Post::join("users","posts.user_id","=","users.id")
+        ->select("posts.*","users.name")
+        ->get();
+        //dd($posts);
         return view("posts.index", compact('posts'));
     }
 
@@ -25,8 +30,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
-        return view("posts.create");
+        $users=User::all();
+        return view("posts.create",compact('users'));
     }
 
     /**
@@ -37,7 +42,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'title' => 'required',
             'content' => 'required',
@@ -73,7 +77,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view("posts.edit",compact("post"));
+        $users=User::all();
+        return view("posts.edit",compact("post","users"));
         //
     }
 

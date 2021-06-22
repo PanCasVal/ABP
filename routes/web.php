@@ -8,6 +8,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ExaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CompradorController;
+use App\Http\Middleware\CheckUser;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,11 +59,14 @@ Route::get("test", function ()
 {
     return view("test.index");
 });
-Route::resource('posts', PostController::class, ['names' => [
-    'index' => 'posts.index',
-    'store' => 'posts.new',]
-]);
-
+Route::middleware([CheckUser::class])->group(function()
+{
+    Route::resource('posts', PostController::class, ['names' => [
+        //'index' => 'posts.index',
+        'store' => 'posts.new',]
+    ])-> except(['index']);
+});
+Route::get("posts",[PostController::class,"index"])->name("posts.index");
 
 Route::resource('tags', TagController::class);
 
@@ -75,3 +79,4 @@ Route::resource('exas',ExaController::class);
 Route::resource('productos',ProductoController::class);
 
 Route::resource('compradores',CompradorController::class);
+

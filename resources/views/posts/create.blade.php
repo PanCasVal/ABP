@@ -55,7 +55,12 @@
                 <div class="form-group">
                     <strong>Usuario:</strong>
                     <select name="user_id" id="">
-                        <option value="1">Adrian</option>
+                        <option value="1">
+                            <option value="" disabled selected>Selecciona valor/Option</option>
+                        @foreach ($users as $user)
+                            <option value="{{$user->id}}">{{$user->name}}</option>>{{$user->name}}
+                        @endforeach
+                        </option>
                     </select>
                 </div>
             </div>

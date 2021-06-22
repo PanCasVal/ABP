@@ -87,7 +87,7 @@ class TagController extends Controller
         ]);
 
         $tag->update($request->all());
-        return redirect()->route('comments.index')
+        return redirect()->route('tags.index')
             ->with('success', 'Actualización exitosa!!');
         //
     }

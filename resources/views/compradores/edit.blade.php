@@ -23,35 +23,35 @@
             </ul>
         </div>
     @endif
-    <form action="{{url('compradores',$comprador->id)}}" method="POST" >
+    <form action="{{url('compradores',$compradore->id)}}" method="POST" >
         @csrf
         @method("PUT")
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nombre:</strong>
-                    <input type="text" name="nombre" class="form-control" placeholder="nombre" value="{{$comprador->nombre}}">
+                    <input type="text" name="nombre" class="form-control" placeholder="nombre" value="{{$compradore->nombre}}">
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Apellido paterno:</strong>
-                    <input type="text" name="ap_p" class="form-control" placeholder="Apellido paterno" alue="{{$comprador->ap_p}}">
+                    <input type="text" name="ap_p" class="form-control" placeholder="Apellido paterno" value="{{$compradore->ap_p}}">
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Apellido materno:</strong>
-                    <input type="text" name="ap_m" class="form-control" placeholder="Apellido materno" alue="{{$comprador->ap_m}}">
+                    <input type="text" name="ap_m" class="form-control" placeholder="Apellido materno" value="{{$compradore->ap_m}}">
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Correo:</strong>:</strong>
-                    <input type="text" name="correo" class="form-control" placeholder="correo" alue="{{$comprador->correo}}">
+                    <input type="text" name="correo" class="form-control" placeholder="correo" value="{{$compradore->correo}}">
                 </div>
             </div>
 

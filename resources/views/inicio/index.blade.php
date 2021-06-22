@@ -1,6 +1,7 @@
 @extends('abp.menu')
 @section('content')
 <html lang="en">
+<title>BUMESA</title>
 <body>
 <main>
     <div class="btn-group">

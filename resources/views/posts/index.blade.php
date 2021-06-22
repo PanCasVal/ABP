@@ -37,7 +37,7 @@
                 <td>{{$post->content}}</td>
                 <td>{{$post->tags}}</td>
                 <td>{{$post->state}}</td>
-                <td>{{$post->user_id}}</td>
+                <td>{{$post->name}}</td>
                 <td>
                     <form action="{{url('posts', $post->id)}}" method="POST">   
                         @csrf
