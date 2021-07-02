@@ -1,11 +1,10 @@
-@extends('layouts.app')
+@extends('abp.menu')
 
 @section('content')
-
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Crear Nuevo POST </h2>
+                <h2>Registrar mueble</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{url('posts')}}" title="Regresar"> <i class="fas fa-backward "></i> </a>
@@ -28,39 +27,37 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Titulo:</strong>
-                    <input type="text" name="title" class="form-control" placeholder="Titulo">
+                    <strong>Nombre_Mueble:</strong>
+                    <input type="text" name="nombre" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Contenido:</strong>
-                    <textarea class="form-control" style="height:50px" name="content"
-                              placeholder="Contenido"></textarea>
+                    <strong>Descripccion</strong>
+                    <textarea class="form-control" style="height:50px" name="descripcion"
+                              placeholder="descripcion"></textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Etiquetas:</strong>
-                    <input type="text" name="tags" class="form-control" placeholder="Etiquetas">
+                    <strong>Precio_COSTO:</strong>
+                    <input type="text" name="precio" class="form-control" placeholder="precio">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Estado</strong>:</strong>
-                    <input type="text" name="state" class="form-control" placeholder="Estado">
+                    <strong></strong>Precio_Venta:</strong>
+                    <input type="text" name="venta" class="form-control" placeholder="Venta">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Usuario:</strong>
                     <select name="user_id" id="">
-                        <option value="1">
-                            <option value="" disabled selected>Selecciona valor/Option</option>
-                        @foreach ($users as $user)
-                            <option value="{{$user->id}}">{{$user->name}}</option>>{{$user->name}}
-                        @endforeach
-                        </option>
+                        <option value="1">Adrian</option>
+                        <option value="1">Juan Diego</option>
+                        <option value="1">Luis Fernando</option>
+                        <option value="1">Miguel</option>
                     </select>
                 </div>
             </div>

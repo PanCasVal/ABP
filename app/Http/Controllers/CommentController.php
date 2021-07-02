@@ -45,7 +45,7 @@ class CommentController extends Controller
             'state' => 'required',
             'author' => 'required',
             'email' => 'required',
-            //'url' => 'required',
+            //'url' => 'required',dd
             'id_post' => 'required',
         ]);
         Comment::create($request->all());
@@ -108,7 +108,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy($comment)
     {
         $comment->delete();
         return redirect()->route("comments.index")->with("success","Post eliminado corectamente");

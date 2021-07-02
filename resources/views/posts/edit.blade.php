@@ -55,8 +55,22 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Usuario:</strong>
-                    <select name="user_id" id="">
-                        <option value="1">Adrian</option>
+                    <select name="user_id" id=""  selected="{{$post->user_id}}">
+                        @foreach ($users as $user)
+                            <option 
+                            value="{{$user->id}}" {{$post->user_id==$user->id? "selected" : ""}}> {{$user->name}}
+                            </option>
+                        @endforeach
+                        <!--
+                            <option value="" disabled selected>Selecciona valor/Option</option>
+                        @foreach ($users as $user)
+                            @if(($post->user_id)==($user->id))
+                                <option value="{{$user->id}}" selected>{{$user->name}}</option>
+                            @else
+                                <option value="{{$user->id}}">{{$user->name}}</option>
+                            @endif
+                        @endforeach
+                        -->
                     </select>
                 </div>
             </div>

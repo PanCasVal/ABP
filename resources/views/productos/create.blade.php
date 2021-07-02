@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Modificar empresa</h2>
+                <h2>Crear Nuevo Producto </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{url('tags')}}" title="Regresar"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{url('productos')}}" title="Regresar"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -23,22 +23,38 @@
             </ul>
         </div>
     @endif
-    <form action="{{url('tags',$tag->id)}}" method="POST" >
+    <form action="{{url('productos')}}" method="POST" >
         @csrf
-        @method("PUT")
+
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nombre:</strong>
-                    <input type="text" name="name" class="form-control" placeholder="Nombre" value="{{$tag->name}}">
+                    <input type="text" name="nombre" class="form-control" placeholder="nombre">
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Frecuencia:</strong>
-                    <input type="text" name="frequency" class="form-control" placeholder="Frecuencia" value="{{$tag->frequency}}">
+                    <strong>Cantidad:</strong>
+                    <input type="text" name="cantidad" class="form-control" placeholder="cantidad">
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Material:</strong>
+                    <input type="text" name="material" class="form-control" placeholder="material">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Mediadas:</strong>:</strong>
+                    <input type="text" name="medidas" class="form-control" placeholder="medidas">
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>

@@ -44,6 +44,7 @@ class ExaController extends Controller
         $b = $request['dias'];
         $c = $a*$b;
         $d = $c-($c*.16); 
+        
         //echo $c."<br>";
         //echo $d;
 

@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('abp.menu')
 
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>CRUD TAG</h2>
+                <h2>Empresas</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{url('tags/create')}}" title="Create a Tag"> <i class="fas fa-plus-circle"></i>
@@ -15,15 +15,15 @@
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
-            <p></p>
+            <p>{{$message}}</p>
         </div>
     @endif
 
     <table class="table table-bordered table-responsive-lg">
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>frequency</th>
+            <th>Nombre</th>
+            <th>Frecuencia</th>
             <th>Acciones</th>
         </tr>
         @foreach ($tags as $tag)
@@ -32,7 +32,7 @@
                 <td>{{$tag->name}}</td>
                 <td>{{$tag->frequency}}</td>
                 <td>
-                    <form action="{{url('tags', $tag->id)}}" method="POST">   
+                    <form action="{{url('tags', $tag->id)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     <button class="btn btn-danger"><i class="fas fa-trash fa-lg"></i></button>
